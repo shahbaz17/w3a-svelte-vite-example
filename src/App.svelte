@@ -1,11 +1,20 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+  import svelteLogo from './assets/svelte.svg';
+  import web3authLogo from './assets/web3auth.svg';
+  import viteLogo from '/vite.svg';
+  import { createWeb3Auth, login, logout, getUser } from './lib/web3auth';
+  import { onMount } from 'svelte';
+
+  onMount(async () => {
+    createWeb3Auth();
+  });
 </script>
 
 <main>
   <div>
+    <a href="https://web3auth.io" target="_blank" rel="noreferrer">
+      <img src={web3authLogo} class="logo" alt="Web3Auth Logo" />
+    </a>
     <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
       <img src={viteLogo} class="logo" alt="Vite Logo" />
     </a>
@@ -13,18 +22,20 @@
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
   </div>
-  <h1>Vite + Svelte</h1>
+  <h1>Web3Auth + Vite + Svelte</h1>
 
   <div class="card">
-    <Counter />
+    <h2>Web3Auth Login</h2>
+
+    <button on:click={login}>Login</button>
+    <button on:click={getUser}>Get User Info</button>
+    <button on:click={logout}>Logout</button>
+
+    <p class="read-the-docs">Check Browser Console for Output</p>
   </div>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
   <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
+    Click on the Web3Auth, Vite and Svelte logos to learn more
   </p>
 </main>
 
