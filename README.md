@@ -2,6 +2,12 @@
 
 This is a simple example of how to use [Web3Auth](https://web3auth.io) with [Svelte](https://svelte.dev) and [Vite](https://vitejs.dev).
 
+## Download/Clone locally
+
+```bash
+git clone https://github.com/shahbaz17/w3a-svelte-vite-example
+```
+
 ## Getting Started
 
 First, install the dependencies...
